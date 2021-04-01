@@ -74,7 +74,7 @@ function draw() {
       };
     }
     //collision needs to happend for every pipe/enemy
-
+// collision for the upper ppipe
     if (
       birdX + bird.width > pipes[i].x &&
       birdX + bird.width < pipes[i].x + pipeNorth.width &&
@@ -91,6 +91,7 @@ function draw() {
         `pipeNorth width:${pipeNorth.width} & pipeNorth height:${pipeNorth.height}`
       );
     }
+    // collision with the lower pipe
     if (
       birdX + bird.width > pipes[i].x &&
       birdX + bird.width < pipes[i].x + pipeNorth.width &&
@@ -108,6 +109,36 @@ function draw() {
       );
       console.log(`The constant is ${constant}`);
     }
+
+    
+//Manish's explanantion 
+    // DONT FREAK OUT READING THIS
+        // Breathe in. 
+        // Relax.
+        // Read slowly
+        // Read carefully
+        // Visualize it
+        //if( birdX + bird.width >= pipes[i].x && birdX <= pipes[i].x + pipeNorth.width && (birdY <= pipes[i].y + pipeNorth.height || birdY+bird.height >= pipes[i].y + constant)){
+        //    isGameOver = true
+        //}
+
+
+        // collision explanation
+        
+        // 1. birdX + bird.width >= pipes[i].x && birdX <= pipes[i].x + pipeNorth.width 
+        /*
+            That line of code actually checks if the bird is between the boundries of the pipe (i.e the left and right hand edges)
+        */
+
+        //2.(birdY <= pipes[i].y + pipeNorth.height 
+        /*
+            That checks if the bird is touching the bottom side of pipeNorth or 
+        */
+
+        //3.  birdY+bird.height >= pipes[i].y + constant)   
+        /*
+            checks the upper side of the pipeSouth
+        */
   }
   ctx.drawImage(fg, 0, canvas.height - fg.height);
 
